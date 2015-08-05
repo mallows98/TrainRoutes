@@ -6,7 +6,7 @@ using System.Text;
 namespace TrainsProblem
 {
     public class Graph
-    {   
+    {
         public List<Node> Nodes { get; set; }
 
         public Graph()
@@ -57,7 +57,8 @@ namespace TrainsProblem
             return paths;
         }
 
-        public GraphResult ProcessGraph(Node from, Node to){
+        public GraphResult GetAllPaths(Node from, Node to)
+        {
             var result = new GraphResult()
             {
                 Start = from,
@@ -66,67 +67,54 @@ namespace TrainsProblem
 
             var allPaths = FindAllPaths(from, to).ToList();
 
+            var pathInfo = new RouteInfo();
             foreach (var path in allPaths)
             {
-                ProcessGraph(path);
+                pathInfo = GetPathInfo(path);
+                result.PossiblePaths.Add(pathInfo);
             }
 
             return result;
         }
 
-        public GraphResult ProcessGraph(List<Node> paths) { 
-            //determine start and end path
-            var result = new GraphResult()
+        public RouteInfo GetPathInfo(List<Node> paths)
+        {
+            //get the number of stops on each path
+            var route = new StringBuilder();
+            int totalDistance = 0;
+            int counter = 0;
+            var initialNode = new Node();
+
+            foreach (Node stop in paths)
             {
-                Start = paths.FirstOrDefault(),
-                End = paths.LastOrDefault()
+                // set route map
+                route.AppendFormat("{0} ", stop.Name);
+
+                //get distance between each other
+                if (counter < paths.Count)
+                {
+                    if (counter > 0) //check if first item
+                    {
+                        //compare
+                        Edge endPoint = initialNode.Edges.FirstOrDefault(e => e.NodeDestination.Name == stop.Name);
+                        //get distance
+                        totalDistance += endPoint.Distance;
+                    }
+
+                    //replace initial node; will be used to compare with the next node
+                    initialNode = stop;
+                    counter++;
+                }
+            }
+
+            var result = new RouteInfo
+            {
+                Path = route.ToString(),
+                NumberOfStops = paths.Count,
+                TotalDistance = totalDistance
             };
 
-
-            //get the number of stops on each path
-            foreach (var path in paths)
-            {
-                var stops = new StringBuilder();
-                int totalDistance = 0;
-                int counter = 0;
-                var initialNode = new Node();
-
-                foreach (Node stop in path)
-                {
-                    //get name
-                    stops.AppendFormat("{0} ", stop.Name);
-
-                    //get distance between each other
-                    if (counter < path.Count)
-                    {
-                        if (counter == 0)
-                        {
-                            initialNode = stop;
-                        }
-                        else
-                        {
-                            //compare
-                            Edge endPoint = initialNode.Edges.FirstOrDefault(e => e.NodeDestination.Name == stop.Name);
-                            //get distance
-                            totalDistance += endPoint.Distance;
-                            //set startNode
-                            initialNode = stop;
-                        }
-                        counter++;
-                    }
-                }
-
-                result.PossiblePaths.Add(new PathInfo
-                {
-                    Path = stops.ToString(),
-                    NumberOfStops = path.Count,
-                    TotalDistance = totalDistance
-                });
-            }
-
             return result;
-        
         }
-
     }
 }

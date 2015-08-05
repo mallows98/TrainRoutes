@@ -10,11 +10,11 @@ namespace TrainsProblem
     {
         public Node Start { get; set; }
         public Node End { get; set; }
-        public List<PathInfo> PossiblePaths { get; set; }
+        public List<RouteInfo> PossiblePaths { get; set; }
 
         public GraphResult()
         {
-            PossiblePaths = new List<PathInfo>();
+            PossiblePaths = new List<RouteInfo>();
         }
 
     }

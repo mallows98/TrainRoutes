@@ -45,10 +45,10 @@
     <Compile Include="GraphResult.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Graph.cs" />
-    <Compile Include="PathInfo.cs" />
+    <Compile Include="RouteInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Route.cs" />
+    <Compile Include="RouteResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

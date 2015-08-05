@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainsProblem
 {
-    public class Routes
+    public class RouteResult
     {
         public Node Start { get; set; }
         public Node End { get; set; }

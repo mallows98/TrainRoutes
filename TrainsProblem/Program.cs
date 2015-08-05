@@ -42,12 +42,8 @@ namespace TrainsProblem
             trainRoutes.AddNode(e);
 
 
-            var result1 = trainRoutes.ProcessGraph(a, c);
-            //var result2 = trainRoutes.ProcessGraph(new List<dynamic>() { 
-            //    a,
-            //    b,
-            //    c
-            //});
+            var result1 = trainRoutes.GetAllPaths(a, c);
+            var result2 = trainRoutes.GetPathInfo(new List<Node>() { a, b, c });
 
         }
     }

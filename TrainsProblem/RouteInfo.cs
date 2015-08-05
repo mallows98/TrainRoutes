@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainsProblem
 {
-    public class PathInfo
+    public class RouteInfo
     {
         public string Path { get; set; }
         public int NumberOfStops { get; set; }
