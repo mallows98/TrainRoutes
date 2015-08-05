@@ -4,6 +4,10 @@
     {
         public Node NodeDestination { get; set; }
         public int Distance { get; set; }
-        //public bool Visited { get; set; }
+        public string Destination {
+            get {
+                return (NodeDestination != null) ?  NodeDestination.Name : null;
+            }
+        }
     }
 }

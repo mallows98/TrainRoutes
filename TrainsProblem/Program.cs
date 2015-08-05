@@ -42,9 +42,13 @@ namespace TrainsProblem
             trainRoutes.AddNode(e);
 
 
-            var result = trainRoutes.FindAllPaths(a, c);
+            var result1 = trainRoutes.ProcessGraph(a, c);
+            //var result2 = trainRoutes.ProcessGraph(new List<dynamic>() { 
+            //    a,
+            //    b,
+            //    c
+            //});
 
-            trainRoutes.GetShortestDistance(a, c);
         }
     }
 }

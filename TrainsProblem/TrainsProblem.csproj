@@ -42,10 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Edge.cs" />
+    <Compile Include="GraphResult.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="PathInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Route.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

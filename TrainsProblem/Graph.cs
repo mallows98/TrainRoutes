@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace TrainsProblem
 {
     public class Graph
     {   
-        Queue<Node> queue;
-
         public List<Node> Nodes { get; set; }
 
         public Graph()
@@ -25,16 +24,11 @@ namespace TrainsProblem
             Nodes.Add(node);
         }
 
-        public int GetDistance(string startNode, string endNode)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<dynamic> FindAllPaths(Node from, Node to)
+        public List<List<Node>> FindAllPaths(Node from, Node to)
         {
             var nodes = new Queue<Tuple<Node, List<Node>>>();
             nodes.Enqueue(new Tuple<Node, List<Node>>(from, new List<Node>()));
-            var paths = new List<dynamic>();
+            var paths = new List<List<Node>>();
 
             while (nodes.Any())
             {
@@ -63,42 +57,76 @@ namespace TrainsProblem
             return paths;
         }
 
-        public List<dynamic> Process(Node from, Node to){
-            var allPaths= FindAllPaths(from, to).ToArray();
-
-            List<dynamic> result = new List<dynamic>();
-
-            for (int ctr = 0; ctr < allPaths.Length; ctr++ )
+        public GraphResult ProcessGraph(Node from, Node to){
+            var result = new GraphResult()
             {
-                var item = allPaths[ctr];
+                Start = from,
+                End = to
+            };
 
-                result.Add()
-                
-                result
+            var allPaths = FindAllPaths(from, to).ToList();
+
+            foreach (var path in allPaths)
+            {
+                ProcessGraph(path);
             }
-            return null;
 
+            return result;
         }
 
-    }
-   
-    public class Routes {
-        public Node Start { get; set; }
-        public Node End { get; set; }
+        public GraphResult ProcessGraph(List<Node> paths) { 
+            //determine start and end path
+            var result = new GraphResult()
+            {
+                Start = paths.FirstOrDefault(),
+                End = paths.LastOrDefault()
+            };
 
-        public List<Node> Path { get; set; }
-        public string PathToString {
-            get {
-                var path = new StringBuilder();
-                foreach (var item in Path)
+
+            //get the number of stops on each path
+            foreach (var path in paths)
+            {
+                var stops = new StringBuilder();
+                int totalDistance = 0;
+                int counter = 0;
+                var initialNode = new Node();
+
+                foreach (Node stop in path)
                 {
-                    path.Append(item.Name + " ");
+                    //get name
+                    stops.AppendFormat("{0} ", stop.Name);
+
+                    //get distance between each other
+                    if (counter < path.Count)
+                    {
+                        if (counter == 0)
+                        {
+                            initialNode = stop;
+                        }
+                        else
+                        {
+                            //compare
+                            Edge endPoint = initialNode.Edges.FirstOrDefault(e => e.NodeDestination.Name == stop.Name);
+                            //get distance
+                            totalDistance += endPoint.Distance;
+                            //set startNode
+                            initialNode = stop;
+                        }
+                        counter++;
+                    }
                 }
 
-                return path.TrimEnd();
+                result.PossiblePaths.Add(new PathInfo
+                {
+                    Path = stops.ToString(),
+                    NumberOfStops = path.Count,
+                    TotalDistance = totalDistance
+                });
             }
+
+            return result;
+        
         }
-        public int Distance { get; set; }
-        public int NumberOfStops { get; set; }
+
     }
 }
