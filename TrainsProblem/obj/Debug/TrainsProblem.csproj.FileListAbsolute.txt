@@ -1,6 +1,0 @@
-c:\Users\Ann\Documents\Visual Studio 2013\Projects\TrainsProblem\TrainsProblem\bin\Debug\TrainsProblem.exe.config
-c:\Users\Ann\Documents\Visual Studio 2013\Projects\TrainsProblem\TrainsProblem\obj\Debug\TrainsProblem.csprojResolveAssemblyReference.cache
-C:\Users\Ann\documents\visual studio 2013\Projects\TrainsProblem\TrainsProblem\bin\Debug\TrainsProblem.exe
-C:\Users\Ann\documents\visual studio 2013\Projects\TrainsProblem\TrainsProblem\bin\Debug\TrainsProblem.pdb
-C:\Users\Ann\documents\visual studio 2013\Projects\TrainsProblem\TrainsProblem\obj\Debug\TrainsProblem.exe
-C:\Users\Ann\documents\visual studio 2013\Projects\TrainsProblem\TrainsProblem\obj\Debug\TrainsProblem.pdb
