@@ -5,7 +5,6 @@ C:\Users\Ann\documents\visual studio 2013\Projects\TrainsProblem\TrainsProblem\b
 C:\Users\Ann\documents\visual studio 2013\Projects\TrainsProblem\TrainsProblem\obj\Debug\TrainsProblem.exe
 C:\Users\Ann\documents\visual studio 2013\Projects\TrainsProblem\TrainsProblem\obj\Debug\TrainsProblem.pdb
 C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem\bin\Debug\TrainsProblem.exe.config
-C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem\obj\Debug\TrainsProblem.csprojResolveAssemblyReference.cache
 C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem\bin\Debug\TrainsProblem.exe
 C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem\bin\Debug\TrainsProblem.pdb
 C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem\obj\Debug\TrainsProblem.exe

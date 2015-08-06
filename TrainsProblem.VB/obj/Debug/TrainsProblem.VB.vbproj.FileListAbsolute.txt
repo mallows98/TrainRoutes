@@ -1,0 +1,9 @@
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\bin\Debug\TrainsProblem.VB.exe.config
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\bin\Debug\TrainsProblem.VB.exe
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\bin\Debug\TrainsProblem.VB.pdb
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\bin\Debug\TrainsProblem.VB.xml
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\obj\Debug\TrainsProblem.VB.Resources.resources
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\obj\Debug\TrainsProblem.VB.vbproj.GenerateResource.Cache
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\obj\Debug\TrainsProblem.VB.exe
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\obj\Debug\TrainsProblem.VB.xml
+C:\_MyFiles\Intergen\TrainRoutes\TrainsProblem.VB\obj\Debug\TrainsProblem.VB.pdb

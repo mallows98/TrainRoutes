@@ -10,12 +10,17 @@ namespace TrainsProblem
     {
         public Node Start { get; set; }
         public Node End { get; set; }
-        public List<RouteInfo> PossiblePaths { get; set; }
+        public List<RouteInfo> PossibleRoutes { get; set; }
+        public RouteInfo ShortestPath {
+            get {
+                var shortPath = PossibleRoutes.Min(r => r.TotalDistance);
+                return PossibleRoutes.FirstOrDefault(r => r.TotalDistance == shortPath);
+            }
+        }
 
         public GraphResult()
         {
-            PossiblePaths = new List<RouteInfo>();
+            PossibleRoutes = new List<RouteInfo>();
         }
-
     }
 }
