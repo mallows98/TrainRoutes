@@ -8,6 +8,7 @@
         {
             get
             {
+                //this is a test
                 return (NodeDestination != null) ? NodeDestination.Name : null;
             }
         }
